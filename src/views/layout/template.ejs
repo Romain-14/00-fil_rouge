@@ -4,15 +4,11 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/styles/css/index.css">
-		<title>project</title>
+		<title>Auth'App</title>
 	</head>
 	<body>
-		
-        <%- include('header') %>
-        
-        <%- include(template) %>
-
-        <%- include('footer') %>
-
+		<%- include("header") %>
+		<%- include("../pages/" + file) %>
+		<%- include("footer") %>
 	</body>
 </html>

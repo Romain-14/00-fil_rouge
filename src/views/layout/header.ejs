@@ -4,11 +4,11 @@
     <nav>
         <a href="/product">products</a>
 
-        <% if (!userdata.isLogged) { %>
+        <% if (!user.isLogged) { %>
           <a href="/authentication">sign in</a>
         <% } %>
 
-        <% if (userdata.isLogged) { %>
+        <% if (user.isLogged) { %>
           <a href="/authentication/logout">Log out</a>
         <% } %>
     </nav>
