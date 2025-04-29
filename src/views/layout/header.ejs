@@ -1,0 +1,15 @@
+<header>
+    <h1><a href="/">my project with EJS</a></h1>
+    
+    <nav>
+        <a href="/product">products</a>
+
+        <% if (!userdata.isLogged) { %>
+          <a href="/authentication">sign in</a>
+        <% } %>
+
+        <% if (userdata.isLogged) { %>
+          <a href="/authentication/logout">Log out</a>
+        <% } %>
+    </nav>
+</header>

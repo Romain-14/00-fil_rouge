@@ -1,0 +1,27 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 20rem;
+  margin: 2rem auto;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: rgb(243, 247, 251);
+  color: royalblue;
+}
+
+/*# sourceMappingURL=index.css.map */
