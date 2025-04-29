@@ -22,28 +22,20 @@ router.get("/authentication/sign-in", (req, res) => {
 });
 
 router.get("/authentication/sign-out", (req, res) => {
-	const params = new URLSearchParams({
-		isLogged: false,
-	});
-	res.redirect("/?" + params.toString());
+    req.session.destroy();
+    res.clearCookie("connect.sid");
+	res.redirect("/authentication/sign-in");
 });
 
 // POST
 router.post("/authentication/sign-in", (req, res) => {
-	if (
-		req.body.username !== user.name ||
-		req.body.password !== user.password
-	) {
-		const params = new URLSearchParams({
-			error: "Identifiants incorrects",
-		});
-		res.redirect("/authentication/sign-in?" + params.toString());
-		return;
-	}
-	const params = new URLSearchParams({
-		isLogged: true,
-	});
-	res.redirect("/?" + params.toString());
+    const userInfo = {
+        name: req.body.username,
+        isLogged: true,
+    }
+	req.session.user = userInfo;
+
+	res.redirect("/");
 });
 
 // NOT FOUND

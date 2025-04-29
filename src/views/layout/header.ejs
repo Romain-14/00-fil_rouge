@@ -4,12 +4,12 @@
     <nav>
         <a href="/product">products</a>
 
-        <% if (!user.isLogged) { %>
-          <a href="/authentication">sign in</a>
+        <% if (!user) { %>
+          <a href="/authentication/sign-in">sign in</a>
         <% } %>
 
-        <% if (user.isLogged) { %>
-          <a href="/authentication/logout">Log out</a>
+        <% if (user) { %>
+          <a href="/authentication/sign-out">Log out</a>
         <% } %>
     </nav>
 </header>
